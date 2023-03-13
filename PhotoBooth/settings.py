@@ -76,9 +76,13 @@ WSGI_APPLICATION = 'PhotoBooth.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'XKjUgGB0ax5wJW2aMfOs',
+        'HOST': 'containers-us-west-148.railway.app',
+        'PORT': '8065',
     }
 }
 
