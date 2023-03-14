@@ -36,6 +36,8 @@ def signup(request):
                    
                 )
                user.save()
+
+               
                return redirect('signin')
             
         else:
