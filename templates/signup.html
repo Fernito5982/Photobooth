@@ -10,7 +10,7 @@
   <body>
     <h1>Registro de nuevo usuario</h1>
     {% for message in messages %}
-    <p>{{message}</p>
+    <p>{{message}}</p>
     {%endfor%}
     <form action="" method="POST">
       {% csrf_token%}

@@ -33,8 +33,10 @@ def signup(request):
                    username= username,
                    email= email,
                    password=password,
+                   
                 )
                user.save()
+               return redirect('index')
             
         else:
             messages.info(request,'Contraseña Invalida')
