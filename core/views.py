@@ -36,7 +36,7 @@ def signup(request):
                    
                 )
                user.save()
-               return redirect('index')
+               return redirect('signin')
             
         else:
             messages.info(request,'Contraseña Invalida')
