@@ -6,4 +6,4 @@ class Usuarios(models.Model):
     lastname = models.CharField(max_length=100)
     nickname = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
-    
+    ##Hola
