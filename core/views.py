@@ -49,4 +49,19 @@ def signup(request):
         return render(request,'signup.html')
 
 def signin(request):
-    return render(request,'signin.html')
+    
+    if request.method == 'POST':
+       username = request.POST['username']
+       password = request.POST['password']
+       user = auth.authenticate(username = username, password = password)
+       
+       
+
+       if user is not None:
+            auth.login(request,user)
+            return redirect('/')
+       else:
+            messages.info(request,'Usuario no encontrado')
+            return redirect('signin')
+    else:
+        return render(request,'signin.html')    

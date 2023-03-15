@@ -26,7 +26,7 @@ body {
     color: #555;
   }
 
-  input[type="email"],
+  input[type="text"],
   input[type="password"] {
     display: block;
     width: 100%;
@@ -57,4 +57,10 @@ body {
   
   input[type="submit"]:hover {
     background-color: #0072d6;
+  }
+
+  p{
+    text-align: center;
+    color: red;
+    font-weight: bold;
   }
