@@ -14,10 +14,12 @@
     {%endfor%}
     <form action="" method="POST">
       {% csrf_token%}
-      <label for="email">Correo electrónico:</label>
+      <label for="email">Nombre de Usuario:</label>
       <input type="text" id="username" name="username" required><br><br>
       <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required><br><br>
+      <input type="password" id="password" name="password" required><br>
+      <a href="signup">Crear una cuenta</a>
+      <br><br>
       <input type="submit" value="Iniciar sesión">
     </form>
   </body>
