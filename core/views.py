@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages, auth
 
+#HOLA FER, COMO ANDAS?
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
