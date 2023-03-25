@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(to bottom right, #852a74, #d84444, #f387dc);
+    background: linear-gradient(to bottom right, #852a74, #d84444, #f387dc);
   }
   h1 {
     text-align: center;
