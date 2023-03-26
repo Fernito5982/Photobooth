@@ -17,15 +17,8 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
-
-#Agregue los 2 ultimos imports y un url pattern para media
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('upload', views.upload, name = 'upload')
+    path('', include('core.urls'))
 ] 
-
-urlpatterns = urlpatterns+static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-
