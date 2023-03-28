@@ -6,11 +6,6 @@ from datetime import datetime
 User = get_user_model()
 
 # Create your models here.
-class Usuarios(models.Model):
-    nombre = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    nickname = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
 
 class Perfil(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
