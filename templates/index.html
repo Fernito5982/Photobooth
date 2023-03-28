@@ -10,7 +10,57 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <div class="right-side lg:pr-4">
+            <a href="#"
+                class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white">
+                <ion-icon name="add-circle" class="-mb-1
+                 mr-1 opacity-90 text-xl uilus-circle"></ion-icon> Upload Pics
+            </a>
+            <!-- Caja de uplaoad -->
+            <div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
+                <div class="uk-flex uk-flex-column choose-upload" hidden>
+                    <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
+                            <path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <p class="my-3 leading-6"> Import videos from YouTube <br> Copy / Paste your video link here </p>
+                    <form class="uk-grid-small" uk-grid>
+                        <div class="uk-width-expand">
+                            <input type="text" class="uk-input uk-form-small  bg-gray-200 " style="box-shadow:none" placeholder="Paste link">
+                        </div>
+                        <div class="uk-width-auto"> <button type="submit" class="button soft-warning -ml-2">
+                                Import </button> </div>
+                    </form>
+                    <a href="#" class="uk-text-muted mt-3 uk-link"
+                        uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
+                          Or Upload Video </a>
+                </div>
+            </div>
+            <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm">
+                Your Image size Must be Maxmium 999MB
+            </div>
+        </div>
+        <!--Perfil-->
+        <a href="#">
+            <img src="{{user_profile.profileimg.url}}" class="header-avatar" alt="">
+        </a>
+        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+            <ul>
+                <li><a href="/settings"> Account setting </a> </li>
+                <li><a href="logout"> Log Out</a></li>
+            </ul>
+        </div>
+    </header>
+
     <h1>Home</h1>
+    <br>
+    <div class = "right-side lg:pr-4">
+            <a href = "#" class="bg-pink-500 flex font-bold hidden hover:bg-pink-600 hover:text-white inline-block items-center lg:block max-h-10 mr-4 px-4 py-2 rounded shado text-white">
+                <ion-icon name="add-circle" class="-mb-1 mr-1 opacity-90 text-xl uilus-circle"></ion-icon> Subir foto
+            </a>
+    </div>
     <br>
     <a href="logout">Logout</a>
 </body>
