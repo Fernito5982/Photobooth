@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1{
+    font-size: 1.5em;
+    color: #fff;
+    margin-left: 20px;
+}
+
+ul{
+
+    width: 20%;
+    /* border: 1px solid #000; */
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+ul a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+ul a:hover{
+    font-size: 1.05em;
+    color: #ffe;
+    font-weight: bold;
+}
+
+
+main{
+    width: 100%;
+    height: 575px;
+    /* border: 1px solid #000; */
+    display: flex;
+}
+
+
+.Amigos,
+.Contenido_principal,
+.Contenido_recomendado{
+    width:20%;
+    height:100%;
+    /* border: 1px solid #000; */
+}
+
+.Contenido_principal{
+    width: 80%;
+    background-color: #b495b2;
+}
+
+.Contenido_recomendado{
+    width:20%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+article{
+    width: 70%;
+    height: 80%;
+    border: 1px solid #000;
+    margin: 30px 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+article img{
+    width: 100%;
+    height: 50%;
+    border: 1px solid #000;
+    object-fit: cover;
+}
+
+.encabezado{
+    width: 100%;
+    height: 10%;
+    border: 1px solid #000;
+}
+
+.interacciones{
+    width: 100%;
+    height: 10%;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.comentarios{
+    width: 100%;
+    height: 30%;
+    border: 1px solid #000;
+}

@@ -10,7 +10,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido {{user_perfil}}</h1>
-    <a href="logout">Logout</a>
+    <!-- <h1>Bienvenido {{user_perfil}}</h1>
+    <a href="logout">Logout</a> -->
+    <nav>
+        <h1>PhotoBooth</h1>
+        <ul>
+            <li><a href="logout">Salir</a></li>
+            <li><a href="#"> {{user_perfil}}</a></li>
+        </ul>
+    </nav>
+
+    <main>    
+        <section class="Contenido_principal">
+            <article>
+                <div class="encabezado">
+                    <h3>@UsuarioRandom</h3>
+                </div>
+                <img src="/media/foto2.png  " alt= "">
+                <div class="interacciones">Barra de interaccion</div>
+                <div class="comentarios">
+
+                </div>
+            </article>
+        </section>
+    
+        <section class="Contenido_recomendado">
+            <h1>Esta seccion es para recomendados</h1>
+        </section>    
+    </main>
+    
 </body>
 </html>
