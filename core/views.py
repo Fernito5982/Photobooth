@@ -10,7 +10,6 @@ from .models import Perfil, Post
 @login_required(login_url='signin')
 def index(request):
     user_object = User.objects.get(username = request.user.username)
-    print(user_object ,"Errooooor")
     user_perfil = Perfil.objects.get(user = user_object)
     
     return render(request,'index.html', {'user_perfil': user_perfil})
@@ -20,12 +19,13 @@ def index(request):
 def upload(request):
     if request.method == 'POST':
         user = request.user.username
-        image = request.FILES.get('image_upload')
+        image = request.FILES.get('imagen_cargada')
         caption = request.POST['caption']
-
-        new_post = Post.objects.create(usuario = user, image = image, caption = caption)
+        print(image)
+        
+        new_post = Post.objects.create(user = user, image = image, caption = caption)
         new_post.save()
-
+        print("Se almaceno")
         return redirect('/')
     else:
         return redirect('/')

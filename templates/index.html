@@ -35,7 +35,12 @@
         </section>
     
         <section class="Contenido_recomendado">
-            <h1>Esta seccion es para recomendados</h1>
+            <form  action="upload" method="POST" class="formulario" enctype="multipart/form-data">
+                {% csrf_token%}
+                <input type="file" name="imagen_cargada"><br>
+                <textarea id="caption" name="caption"></textarea><br>
+                <input type="submit">
+            </form>
         </section>    
     </main>
     
