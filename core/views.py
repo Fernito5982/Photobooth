@@ -38,7 +38,7 @@ def signup(request):
         username = request.POST['usuario']
         email = request.POST['email']
         password = request.POST['password']
-        anio_nacimiento = request.POST['anio_nacimiento']
+        image = request.FILES.get('Avatar')
 
         if password == request.POST['confirm_password']:
            
@@ -55,12 +55,20 @@ def signup(request):
                    username= username,
                    email= email,
                    password=password,
+                   first_name = nombre,
+                   last_name = apellido,
                    
                 )
                user.save()
                user_model = User.objects.get(username=username)
                
-               new_perfil = Perfil.objects.create(user=user_model,id_user=user_model.id)     
+
+               new_perfil = Perfil.objects.create(
+                   user=user_model,
+                   id_user=user_model.id,
+                   profileimg = image,
+                   )
+                 
 
                new_perfil.save()          
 

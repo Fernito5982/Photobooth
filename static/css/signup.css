@@ -1,48 +1,216 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #852a74, #d84444, #f387dc);
-  }
-  h1 {
-    text-align: center;
-    color: #333;
-  }
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-  }
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
-  input[type="submit"] {
-    background-color: #0095ff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  input[type="submit"]:hover {
-    background-color: #0072d6;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,500;1,600;1,700;1,800&display=swap');
 
-  p{
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    flex-direction: column;
+    
+}
+
+main{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.fondo{
+    width: 100%;
+    height: 100vh;
+    -webkit-clip-path: polygon(0 78%, 100% 43%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 78%, 100% 43%, 100% 100%, 0% 100%);
+    background-image: linear-gradient(to top, #e8198b 0%, #c7eafd 100%);
+    z-index: 1;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+}
+
+.main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+.Banner{
+    width: 30%;
+    height: 80vh;
+    /* border: 1px solid #000; */
+    margin-top:20px;
+    box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    -moz-box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    z-index: 2;
+}
+
+.nav{
+    width: 100%;
+    height: 60px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2;
+}
+
+form{
+    width: 50%;
+    height: 80vh;
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    /* border-radius: 30px; */
+    background-color: #fff;
+    margin-top:20px;
+    box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    -moz-box-shadow: 18px -9px 83px -23px rgba(0,0,0,0.69);
+    z-index: 2;
+}
+
+
+.contenedor1{
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid #000; */
+    display: flex;
+    z-index: 2;
+}
+
+.imgUser{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    overflow: hidden;
+
+    padding:5px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.imgUser picture{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* border: 1px solid #000; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    z-index: 2;
+}
+
+.imgUser picture img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.FullName{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.FullName div{
+    /* border: 1px solid #000; */
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+
+
+label{
+
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 5px;
+    letter-spacing: 2px;
+}
+
+.Email,
+.UserName{
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+
+}
+
+.Password{
+    width: 100%;
+    height: 15%;
+    /* border: 1px solid #000; */
+    display: flex;
+}
+
+.Password div{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+}
+
+.btn{
+    padding: 15px 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(190, 24, 141);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+}
+
+.btnEnviar{
+    width: 100%;
+    height: 13%;
+    /* border: 1px solid #000; */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    
+}
+
+.btn:hover{
+    background-color:  rgb(107, 4, 76);
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
     text-align: center;
+    margin-top: 30px;
     color: red;
     font-weight: bold;
-  }
+}
