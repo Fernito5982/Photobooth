@@ -1,26 +1,47 @@
 {%load static%}
-
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Bienvenido a PhotoBooth</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{%static '/css/signin.css' %}">
-  </head>
-  <body>
-    <h1>Iniciar sesión en PhotoBooth</h1>
-    {% for message in messages %}
-    <p>{{message}}</p>
-    {%endfor%}
-    <form action="" method="POST">
-      {% csrf_token%}
-      <label for="email">Nombre de Usuario:</label>
-      <input type="text" id="username" name="username" required><br><br>
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required><br>
-      <a href="signup">Crear una cuenta</a>
-      <br><br>
-      <input type="submit" value="Iniciar sesión">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Login PhotoBooth</title>
+
+</head>
+<body>
+   <div class="box">
+    <form class="container" action=" " method="post">
+        {% csrf_token%}
+        <div class="top">
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {%endfor%}
+            <header>Welcome to PhotoBooth</header>
+        </div>
+
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" id="" name="username"  required>
+            <i class='bx bx-user' ></i>
+        </div>
+
+        <div class="input-field">
+            <input type="Password" class="input" placeholder="Password" id="" name="password" required >
+            <i class='bx bx-lock-alt'></i>
+        </div>
+
+        <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="">
+        </div>
+
+        <div class="two-col">
+            <div class="two">
+                <label><a href="signup">Aun no tienes cuenta?</a></label>
+            </div>
+        </div>
     </form>
-  </body>
+</div>  
+</body>
 </html>
