@@ -1,0 +1,10 @@
+.logo-text{
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');

@@ -107,8 +107,8 @@ form{
 }
 
 .imgUser picture{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     /* border: 1px solid #000; */
     margin-bottom: 10px;
@@ -180,7 +180,7 @@ input{
 }
 
 .btn{
-    padding: 15px 60px;
+    padding: 10px 60px;
     border-radius: 10px;
     border: none;
     background-color: rgb(190, 24, 141);
@@ -213,4 +213,8 @@ p{
     margin-top: 30px;
     color: red;
     font-weight: bold;
+}
+
+input[type=file]{
+    transform: scale(0.9);
 }

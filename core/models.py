@@ -11,7 +11,7 @@ class Perfil(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     id_user = models.IntegerField()
     bio = models.TextField(blank = True)
-    profileimg = models.ImageField(upload_to = 'profile_images', default ='bpp.png')
+    profileimg = models.ImageField(upload_to = 'profile_images', default ='bpp.webp')
     
     def __str__(self):
         return self.user.username
@@ -23,7 +23,6 @@ class Post(models.Model):
     caption = models.TextField()
     created_at = models.DateTimeField(default = datetime.now)
     number_likes = models.IntegerField(default = 0)
-
     def __str__(self):
         return self.user
 
