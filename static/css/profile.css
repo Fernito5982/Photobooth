@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+:root{
+    --border: 1px solid #000;
+    --border2: 1.5px solid #00000079; 
+
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.Portada{
+    width: 100%;
+    height: 33vh;
+    /* border: var(--border); */
+    position: relative;
+}
+
+.Portada a{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.perfil_foto{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    outline: 5px solid rgb(136, 20, 182);
+    top: 110px;
+    left: 50px;
+    z-index: 1000;
+}
+
+.Portada_foto{
+    width: 100%;
+    height: 33vh;
+}
+
+.Portada img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.body{
+    width: 100%;
+    height: 67vh;
+    display: flex;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    position: relative;
+}
+
+.btn{
+    padding: 20px 100px;
+    border-radius: 10px;
+    background-color: rgb(204, 98, 204);
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 45px;
+    left: 35px;
+    border: none;
+}
+
+.btn:hover{
+    background-color: purple;
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.estadisticas{
+    width: 30%;
+    height: 100%;
+    border-right:var(--border2);
+}
+
+.not{
+    width: 100%;
+    height: 20%;
+}
+
+.stat h2{
+    margin-bottom: 20px;
+    margin-left: 40px;
+    font-size: 1.5em;
+}
+
+.stat h3{
+    margin-bottom: 20px;
+    margin-left: 80px;
+    font-size: 1em;
+}
+
+.contenedor_fotos{
+    width: 70%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    padding: 30px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.contenedor_fotos picture{
+    width: 180px;
+    height: 180px;
+    /* border: var(--border); */
+}
+
+.contenedor_fotos picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

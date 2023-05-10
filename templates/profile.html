@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/profile.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <section class="Portada">
+        <div class="Portada_foto">
+            <img src="/media/profile_images/pexels-eberhard-grossgasteiger-1612351.jpg" alt="">
+        </div>
+        
+        <a href="/">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
+              </svg>
+            <label for="">Back</label>
+        </a>
+
+        <picture class="perfil_foto"><img src="/media/{{user_profile.profileimg}}" alt=""></picture>
+
+    </section>
+    <section class="body" >
+        <form action="/follow" method="POST"  class="estadisticas">
+            {%csrf_token %}
+            <div class="not"></div>
+            <div class="stat">
+                <h2 for="">@{{user_profile.user.username}}</h2>
+                <h3 for="">{{user_followers}} Seguidores</h3>
+                <h3 for="">{{user_following}} Seguidos</h3>
+                <h3 for="">{{user_post_length}} Posts</h3>
+            </div>
+            <input type="hidden" value="{{user.username}}" name="follower">
+            <input type="hidden" value="{{user_object.username}}" name="user">
+            
+            {%if user_object.username == user.username %}
+            <a href="/logout" data-ripple=""><button type="submit" class="btn">Salir</button></a>
+            {%else%}
+            <a data-ripple=""><button type="submit" class="btn">{{button_text}}</button></a>
+            {%endif%}
+        </form >
+        <article class="contenedor_fotos">
+            {%for post in user_posts %}
+            <picture><img src="{{post.image.url}}" alt=""></picture>
+            {%endfor%}
+        </article>
+    </section>
+
+</body>
+</html>
