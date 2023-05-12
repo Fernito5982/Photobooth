@@ -59,7 +59,7 @@
 
         <section class="Post_dash">
 
-            <!-- {%for post in posts %} -->
+            {%for post in posts %}
                     <article class="Post_card">
                         <div class="cabezera">
                             <a href="/profile/{{post.user}}" class="usuarioPost">@{{post.user}}</a>
@@ -92,7 +92,7 @@
                         </div>
                         <a href="#">Ver mas comentarios</a>
                     </article>
-            <!-- {% endfor %} -->
+            {% endfor %}
         </section>
     
     </div>

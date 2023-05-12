@@ -19,22 +19,20 @@ def index(request):
 
     usuarios = Perfil.objects.all()
 
-
     # Filtro para solo mostrar publicaciones de usuarios seguidos
     user_following_list = []
+    user_following = FollowersCount.objects.filter(follower=request.user.username)
     feed = []
-
-    user_following = FollowersCount.objects.filter(follower = request.user.username)
 
     for users in user_following:
         user_following_list.append(users.user)
+        user_following_list.append(request.user.username)
 
     for usernames in user_following_list:
         feed_lists = Post.objects.filter(user=usernames)
         feed.append(feed_lists)
 
     feed_lists = list(chain(*feed))
-
 
     # Funciones de sugerencia de seguidores
     all_users = User.objects.all()
