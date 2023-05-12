@@ -4,7 +4,7 @@
 
 :root{
     --border: 1px solid #000;
-    --border2: 1px solid #00000079; 
+    --border2: 1px solid #00000079;
 }
 
 *{
@@ -16,7 +16,6 @@
 body{
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     font-family: 'Roboto', sans-serif;
-    position: relative;
 }
 
 nav{
@@ -137,7 +136,7 @@ nav div{
 
 .suggestion_friends{
     width: 85%;
-    height: 50%;
+    height: 75%;
     /* background-color: gray; */
     align-self: center;
     /* border: var(--border); */
@@ -149,28 +148,54 @@ nav div{
 
 .suggestion-card-friend{
     width: 100%;
-    height: 15%;
+    height: 20%;
     /* border: var(--border); */
     display: flex;
     align-items: center;
     position: relative;
-    padding: 5px 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
-.suggestion-card-friend picture{
-    width: 40px;
-    height: 40px;
-    background-color: gray;
+
+.profileimgSuggest{
+    width: 20%;
+    height: 60%;
+    /* border: var(--border); */
+}
+
+.profileimgSuggest picture{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.profileimgSuggest picture img{
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
 }
 
-.suggestion-card-friend label{
-    align-self: center;
-    justify-self: center;
-    margin-top: 5px;
+.nameuserSuggest{
+    width: 200px;
+    height: 100%;
+    /* border: var(--border); */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    word-break:break-all;
+    word-wrap: break-word;
     font-size: 0.9rem;
-    margin-left: 10px;
+}
+
+
+.btnVer{
+    width: 10%;
+    height: 100%;
+    /* border: var(--border); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .suggestion-card-friend a{
@@ -199,7 +224,7 @@ nav div{
     left: 15%;
     color: #ffffffce;
     text-decoration: none;
-    font-size: 1.2rem;              
+    font-size: 1.2rem;
     font-weight: bold;
     transition: 0.2s;
 
@@ -242,7 +267,7 @@ nav div{
 
 .Post_dash::-webkit-scrollbar-button:increment,.Post_dash::-webkit-scrollbar-button {
     display: none;
-} 
+}
 
 .Post_dash::-webkit-scrollbar:horizontal {
     height: 10px;
@@ -294,18 +319,21 @@ nav div{
     font-size: 0.95em;
     letter-spacing: 2px;
     margin-right: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.usuarioPost:hover{
+    color: purple;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .hora{
     font-size: 0.8em;
 }
 
-.cabezera a{
-    margin-left: 55%;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: #400e61;
-}
+
 
 .img_post{
     width: 100%;
@@ -328,9 +356,8 @@ nav div{
 
 
 .like,
-.comment,
-.favorito{
-    width: 40%;
+.comment{
+    width: 50%;
     height: 100%;
     /* border: var(--border); */
     text-align: center;
@@ -338,7 +365,6 @@ nav div{
     padding: 5px;
 }
 
-.favorito a,
 .comment a,
 .like a{
     width: 100%;
@@ -346,7 +372,6 @@ nav div{
     /* border: var(--border); */
 }
 
-.favorito a svg,
 .comment a svg,
 .like a svg{
     width: 90%;
@@ -382,18 +407,7 @@ nav div{
     cursor: pointer;
 }
 
-.favorito svg{
-    color: goldenrod;
-}
 
-.favorito svg:hover{
-    color: #fff;
-}
-
-.favorito:hover{
-    background-color: goldenrod;
-    cursor: pointer;
-}
 
 .descripcion{
     width: 100%;

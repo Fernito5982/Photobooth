@@ -9,6 +9,8 @@ urlpatterns = [
     path('likes_post',views.likes_post, name = 'likes_post'),
     path('upload',views.upload, name = 'upload'),
     path('follow',views.follow, name = 'follow'),
+    path('search',views.search, name = 'search'),
     path('profile/<str:pk>',views.profile, name = 'profile')
+
     
 ]

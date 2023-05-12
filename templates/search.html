@@ -1,0 +1,50 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/search.css' %}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <picture class="logo-img">
+                <img src="/media/arte-y-diseno.png" alt="">
+            </picture>
+            <h1 class="logo-text">PhotoBooth</h1>
+        </div>
+        <form action="search" method="POST"  class="search">
+            {% csrf_token%}
+            <input type="search" name="username" id="">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div>
+            <a href="/">Volver</a>
+        </div>
+    </nav>
+
+    <div class="home">
+       
+        {% for users in username_profile_list %}
+        <div class="card">
+           <div class="img">
+                <img src="{{users.profileimg.url}}" alt="">
+           </div>
+           <div class="info">
+                <label for="" class="username">@{{users.user}}</label>
+           </div>
+           <div  class="btns">
+                <a href="/profile/{{users.user}}">Ver perfil</a>
+           </div >
+       </div>
+       {%endfor%}
+      
+    </div>
+    
+</body>
+</html>
