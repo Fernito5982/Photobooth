@@ -38,7 +38,7 @@
             <input type="hidden" value="{{user_object.username}}" name="user">
             
             {%if user_object.username == user.username %}
-            <a href="/logout" data-ripple=""><button type="submit" class="btn">Salir</button></a>
+            <a data-ripple=""><button type="submit" class="btn"><a href="/logout">Salir</a></button></a>
             {%else%}
             <a data-ripple=""><button type="submit" class="btn">{{button_text}}</button></a>
             {%endif%}

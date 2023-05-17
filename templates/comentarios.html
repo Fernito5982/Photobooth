@@ -1,0 +1,65 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/comentario.css' %}">
+    <title>Comentario</title>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <picture class="logo-img">
+                <a href="/"><img src="/media/arte-y-diseno.png" alt=""></a>
+            </picture>
+            <a href="/"><h1 class="logo-text">PhotoBooth</h1></a>
+        </div>
+        <form action="/search" method="POST"  class="search">
+            {% csrf_token%}
+            <input type="search" name="username" id="">
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div>
+            <picture class="user">
+                <img src="/media/{{user_perfil.profileimg}}" alt="">
+            </picture>
+            <a href="/profile/{{user_perfil}}"><label for="">@{{user_perfil}}</label></a>
+        </div>
+    </nav>
+
+
+
+    <section>
+        <div class="post_origin">
+            <label for=""><b>@{{post.user}}</b></label>
+            <picture>
+                <img src="{{post.image.url}}" alt="">
+            </picture>
+            <p>{{post.caption}}</p>
+        </div>
+        <article class="container_comment_parent">
+            <div class="container_comment">
+                {%for comentario in comments%}
+                <div class="comment">
+                    <label for=""><b>@{{comentario.username}} </b></label>
+                    <p>{{comentario.comment}}</p>
+                </div>
+                {%empty%}
+                <h3>No hay ningun comentario</h3>
+                {%endfor%}
+            </div>
+            <form action="/comentar" class="crearComment" method="POST">
+                {% csrf_token%}
+                <textarea name="comentario" id="comentario">Escribe un comentario</textarea>
+                <input type="submit" value="→">
+                <input type="hidden" name="id" value="{{post.id}}">
+            </form>
+        </article>
+    </section>
+</body>
+</html>

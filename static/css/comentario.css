@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root{
-    --border: 1px solid #000;
-    --border2: 1px solid #00000079; 
+    --border:1px solid #000;
 }
+
 
 *{
     margin: 0;
@@ -14,7 +14,6 @@
 }
 
 body{
-    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -41,6 +40,10 @@ nav div{
     background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
     -webkit-background-clip: text;
     color: transparent;
+}
+
+a{
+    text-decoration: none;
 }
 
 .logo-img{
@@ -108,94 +111,113 @@ nav div{
     border-radius: 50%;
 }
 
-.home{
-    width: 100%;
-    height: 90vh;
-    /* border: var(--border); */
-    display: flex;
-    justify-content: center;
-    padding-top: 30px;
-}
-
-.card{
-    width: 55%;
-    height: 25%;
-    /* border: var(--border); */
+section{
+    width: 70%;
+    height: 80vh;
+    border: var(--border);
     position: relative;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.479);
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
     display: flex;
 }
 
-.img{
-    width: 30%;
+.post_origin{
+    width: 60%;
     height: 100%;
-    /* border-right: var(--border2); */
-
+    border-right: var(--border);
+    display: flex;
+    flex-direction:column;
 }
 
-.img img{
+.post_origin label{
+    display: block;
+    width: 100%;
+    height: 10%;
+    /* border: var(--border); */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.post_origin picture{
+    width: 100%;
+    height: 70%;
+    /* border: var(--border); */
+}
+
+.post_origin picture img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-
 }
 
-.info{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-}
-
-.info div{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.info div label{
-    margin-right: 15px;
-}
-
-.username{
-    margin-left: 25px;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.btns{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.btns a{
-    padding: 10px 25px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.02em;
-    font-weight: bold;
-    background-color: steelblue;
-    color: white;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 1px;
+.post_origin p{
+    width: 100%;
+    height: 20%;
+    padding: 15px;
+    font-size: 0.9rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.btns a:hover{
-    background-color: rgb(41, 77, 107);
-    transform: scale(1.02);
+.container_comment_parent{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-a{
-    text-decoration: none;
+.crearComment{
+    width: 100%;
+    height: 20%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: var(--border);
 }
+
+.crearComment textarea{
+    width: 85%;
+    height: 100%;
+    padding: 5px;
+    resize: none;
+}
+
+.crearComment textarea:focus{
+    outline: none;
+}
+
+.crearComment input{
+    width: 10%;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight:bolder;
+    background-color: #874da2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.container_comment{
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+
+.comment{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+
+.comment label{
+    font-size: 1rem;
+}
+
+.comment p{
+    font-size: 0.8rem;
+}
+

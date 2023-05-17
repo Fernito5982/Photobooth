@@ -14,9 +14,9 @@
     <nav>
         <div>
             <picture class="logo-img">
-                <img src="/media/arte-y-diseno.png" alt="">
+                <a href="/"><img src="/media/arte-y-diseno.png" alt=""></a>
             </picture>
-            <h1 class="logo-text">PhotoBooth</h1>
+            <a href="/"><h1 class="logo-text">PhotoBooth</h1></a>
         </div>
         <form action="/search" method="POST"  class="search">
             {% csrf_token%}
@@ -28,7 +28,7 @@
             <picture class="user">
                 <img src="/media/{{user_perfil.profileimg}}" alt="">
             </picture>
-            <label for="">@{{user_perfil}}</label>
+            <a href="/profile/{{user_perfil}}"><label for="">@{{user_perfil}}</label></a>
         </div>
     </nav>
 
@@ -87,10 +87,14 @@
                             <label for=""> {{post.number_likes}} Me gusta</label>
                         </div>
                         <div class="descripcion">
-                            <label for="">@{{post.user}}  </label>
-                            <p>{{post.caption}}</p>
+                            <div class="comentario">
+                                <label for="">@{{post.user}}  </label>
+                                <p>{{post.caption}}</p>
+                            </div>
+
+                            <a href="/showComments?post_id={{post.id}}">Ver mas comentarios</a>
+
                         </div>
-                        <a href="#">Ver mas comentarios</a>
                     </article>
             {% endfor %}
         </section>
@@ -115,6 +119,11 @@
         <span class="close2" id="cerrar"><a href="#">X</a></span>
     </form>
 
+    
+    
+
     <script src="{%static '/Js/makePost.js' %}"></script>
+    <script src="{%static '/Js/makeComment.js' %}"></script>
+
 </body>
 </html>

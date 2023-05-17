@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required 
 from django.contrib import messages, auth
-from .models import Perfil, Post,LikePost,FollowersCount
+from django.shortcuts import render
+from .models import Perfil, Post,LikePost,FollowersCount,Comentario
 from itertools import chain
 import random
 
@@ -11,7 +12,7 @@ import random
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
-    
+
     # Obtienes datos del usuario en sesion
     user_object = User.objects.get(username = request.user.username)
     
@@ -238,3 +239,39 @@ def search(request):
 
 
     return render(request,'search.html',{'user_profile':user_profile, 'username_profile_list':username_profile_list})
+
+@login_required(login_url='signin')
+def comentar(request):
+
+    if request.method == 'POST':
+        
+        #obteniendo datos 
+        username = request.user.username
+        comment = request.POST['comentario']
+        post_id = request.POST['id']
+
+        print("username: " + username)
+        print("comment: " + comment)
+        print("id: " + post_id)
+        new_comment = Comentario.objects.create(post_id = post_id, username = username, comment = comment)
+        new_comment.save()
+        return redirect('/showComments?post_id='+post_id)
+    
+def showComments(request):
+
+    user_object = User.objects.get(username = request.user.username)
+    user_perfil = Perfil.objects.get(user = user_object)
+    post_id = request.GET.get('post_id')
+    comments = Comentario.objects.filter(post_id=post_id)
+    
+    post = Post.objects.filter(id=post_id).first() 
+    print(comments)
+
+    context = {
+        'comments': comments,
+        'post': post,
+        'user_perfil':user_perfil,
+    }
+
+    return render(request,'comentarios.html',context)
+    

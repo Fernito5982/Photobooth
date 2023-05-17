@@ -42,8 +42,11 @@
                 <a href="/profile/{{users.user}}">Ver perfil</a>
            </div >
        </div>
+       {%empty%}
+            <h1>El usuario no se encontro</h1>
        {%endfor%}
-      
+ 
+
     </div>
     
 </body>
