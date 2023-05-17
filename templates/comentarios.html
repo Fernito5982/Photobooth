@@ -46,7 +46,7 @@
             <div class="container_comment">
                 {%for comentario in comments%}
                 <div class="comment">
-                    <label for=""><b>@{{comentario.username}} </b></label>
+                    <a href="/profile/{{comentario.username}}"><label for=""><b>@{{comentario.username}} </b></label></a>
                     <p>{{comentario.comment}}</p>
                 </div>
                 {%empty%}

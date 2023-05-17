@@ -394,6 +394,14 @@ nav div{
     color: #fff;
 }
 
+.activo{
+    background-color: crimson;
+}
+
+.activo svg{
+    color: white;
+}
+
 .comment svg{
     color: steelblue;
 }
